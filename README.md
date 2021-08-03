@@ -1,2 +1,2 @@
-# blognitess
+# Blognitess
 Blognite Static Site
