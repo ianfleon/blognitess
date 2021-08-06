@@ -4,8 +4,8 @@ Blognite Static Site
 ## Mengambil data web
 Taruh attribute ```data-web``` pada sebuah element, kemudian diikuti dengan penanda #{}# berisi data sesuai dengan yang ada di ```konfigurasi.json```
 
-```nama_web``` : nama website
-```base_url``` : alamat utama website
+- ```nama_web``` : nama website
+- ```base_url``` : alamat utama website
 
 **Contoh:**
 ```html
@@ -15,14 +15,14 @@ Taruh attribute ```data-web``` pada sebuah element, kemudian diikuti dengan pena
 ## Menampilkan daftar postingan
 Buat sebuah element untuk pembungkus, nantinya akan menampung daftar element post. Kemudian beri attribute ```data-blog="wrap-post"```
 
-Contoh:
+**Contoh:**
 ```html
 <div class="container" data-blog="wrap-post"></div>
 ```
 
 Setelah itu buat sebuah element yang nanti berisi data dari setiap post, beri juga attribute seperti ini ```data-blog="item-post"```
 
-Contoh:
+**Contoh:**
 ```html
 <!-- Pembungkus -->
 <div class="container" data-blog="wrap-post">
@@ -33,7 +33,7 @@ Contoh:
 
 Untuk mengambil informasi dari setiap item dari daftar postingan, beri attribute ```data-blog``` dan diikuti penanda #{}# yang berisi kata kunci.
 
-Contoh:
+**Contoh:**
 ```html
 <!-- Pembungkus -->
 <div class="container" data-blog="wrap-post">
