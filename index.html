@@ -13,12 +13,12 @@
 <nav class="navbar">
     <div class="nav-brand">
         <h2>
-            <a href="#">Blognitess</a>
+            <a href="#{base_url}#" data-web>#{nama_web}#</a>
         </h2>
     </div>
     <ul class="nav-link-wrap">
-        <li class="nav-link"><a href="">Beranda</a></li>
-        <li class="nav-link"><a href="">Tentang</a></li>
+        <li class="nav-link"><a href="#{base_url}#" data-web>Beranda</a></li>
+        <li class="nav-link"><a href="tentang.html">Tentang</a></li>
     </ul>
 </nav>
 <!-- End Navbar -->
@@ -26,25 +26,11 @@
 <!-- Kontener -->
 <div class="kontener">
     <!-- Card Wrapper -->
-    <div class="card-wrap">
+    <div class="card-wrap" data-blog="wrap-post">
         <!-- Card Item -->
-        <div class="card-item">
+        <div class="card-item" data-blog="item-post">
             <div class="card-info">
-                <h4 class="card-title">Judul</h4>
-                <p class="card-desc">Deksripsi</p>
-            </div>
-        </div>
-        <!-- Card Item -->
-        <div class="card-item">
-            <div class="card-info">
-                <h4 class="card-title">Judul</h4>
-                <p class="card-desc">Deksripsi</p>
-            </div>
-        </div>
-        <!-- Card Item -->
-        <div class="card-item">
-            <div class="card-info">
-                <h4 class="card-title">Judul</h4>
+                <h4 class="card-title" data-blog>#{judul}#</h4>
                 <p class="card-desc">Deksripsi</p>
             </div>
         </div>
@@ -52,7 +38,10 @@
 </div>
 <!-- End Kontner -->
 
+
 <script src="maincore/blognitess.js"></script>
 <script src="maincore/app.js"></script>
+<script src="maincore/main.js"></script>
+
 </body>
 </html>

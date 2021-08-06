@@ -4,8 +4,6 @@ const body = document.querySelector('body');
 
 function cek_file_page(data) {
 
-    // console.log(data);
-
     data.totalpage = data.page.length; // set totalpage
 
     const f = 'datapost/list/' + data.page[cek_page()-1] + '.json';
@@ -20,7 +18,6 @@ function cek_file_page(data) {
 
 /* Menggabungkan data dari list/*json ke HTML */
 function embed_page(file) {
-    // console.log(file);
     fetch(file)
         .then(response => response.json())
         .then(data => {
@@ -50,8 +47,6 @@ function cek_page() {
 
 /* List post */
 function list_post(data) {
-
-    // console.log(data);
     
     const wrapList = document.querySelector('[data-blog=wrap-post]');
     const wrapPost = document.querySelector('[data-blog=item-post]');
@@ -64,7 +59,6 @@ function list_post(data) {
     let judulTag = document.querySelectorAll('[data-blog');
 
     for (let i=0; i<data.length; i++) {
-        // judulTag[i].outerHTML = re_outer_html(judulTag[i].outerHTML, data[0]);
         judulTag[i].outerHTML = re_outer(judulTag[i].outerHTML, data[0]);
     }
 
