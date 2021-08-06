@@ -3,6 +3,7 @@ Blognite Static Site
 
 ## Mengambil data web
 Taruh attribute ```data-web``` pada sebuah element, kemudian diikuti dengan penanda #{}# berisi data sesuai dengan yang ada di ```konfigurasi.json```
+
 ```nama_web``` : nama website
 ```base_url``` : alamat utama website
 
