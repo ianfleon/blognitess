@@ -160,6 +160,8 @@ function _GET_FILE_POST_HTML(config) {
     let file_sekarang = window.location.href.split()[0].split('/');
     file_sekarang = file_sekarang[file_sekarang.length - 1];
 
+    console.log(file_sekarang);
+
     if (file_sekarang == config.file_post_html || file_sekarang != 'index.html') {
         _GET_POSTINGAN();
     }
@@ -321,8 +323,6 @@ function _GET_META_MD(data, myurl) {
 
 function _CEK_FILE_POSTINGAN(totalfile) {
 
-    // console.log(totalfile);
-
     const CHECK_FILES = setInterval(() => {
         if (totalfile === $hasilfile.length) {
             clearInterval(CHECK_FILES);
@@ -360,9 +360,9 @@ function _RUN_PAGE(page) {
     _LOAD_FILE('datapost/page.json', _CHECK_FILE_PAGES);
 }
 
+console.log("BLOGNITESS: Testing 2");
+
 /* Fungsi Pertama */
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
-_CHECK_FILE_POST_HTML();
 window.onload = _RUN_PAGE();
-
-console.log("BLOGNITESS: Testing 1");
+_CHECK_FILE_POST_HTML();
