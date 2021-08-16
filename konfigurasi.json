@@ -1,4 +1,5 @@
 {
-    "nama_web" : "BLOGNITESS",
-    "base_url" : "https://ianfleon.github.io/blognitess/"
+    "nama_web" : "Blognitess",
+    "base_url" : "https://ianfleon.github.io/blognitess/",
+    "post_html_file" : "post.html"
 }

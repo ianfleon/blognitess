@@ -1,45 +1,35 @@
 # Blognitess
 Blognite Static Site
 
-## Mengambil data web
-Taruh attribute ```data-web``` pada sebuah element, kemudian diikuti dengan penanda ```#{}#``` berisi data sesuai dengan yang ada di ```konfigurasi.json```
+## Menambil Dafar Postingan
+Beri attribute ```--daftar-post``` pada element yang ingin dilooping sebagai item. Misalnya:
 
-- ```nama_web``` : nama website
-- ```base_url``` : alamat utama website
-
-**Contoh:**
 ```html
-<a href="#{base_url}#" data-web>#{nama_web}#</a>
-```
+<div class="column is-four-fifth" --daftar-post>
 
-## Menampilkan daftar postingan
-Buat sebuah element untuk pembungkus, nantinya akan menampung daftar element post. Kemudian beri attribute ```data-blog="wrap-post"```
-
-**Contoh:**
-```html
-<div class="container" data-blog="wrap-post"></div>
-```
-
-Setelah itu buat sebuah element yang nanti berisi data dari setiap post, beri juga attribute seperti ini ```data-blog="item-post"```
-
-**Contoh:**
-```html
-<!-- Pembungkus -->
-<div class="container" data-blog="wrap-post">
-    <!-- Item -->
-    <div class="card" data-blog="item-post"></div>
 </div>
 ```
 
-Untuk mengambil informasi dari setiap item dari daftar postingan, beri attribute ```data-blog``` dan diikuti penanda ```#{}#``` yang berisi kata kunci.
+Kemudian buat sebuah wrapper (pembungkus) dari post :
 
-**Contoh:**
 ```html
-<!-- Pembungkus -->
-<div class="container" data-blog="wrap-post">
-    <!-- Item -->
-    <div class="card" data-blog="item-post">
-        <h2 data-blog>#{judul}#</h2>
+<div class="card" --data-post>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <a href="post.html?/#{url}#" class="title is-4">#{judul}#</a>
+                    <p class="subtitle is-6">#{penulis}#</p>
+                </div>
+            </div>
+            <div class="content">
+                #{deskripsi}#
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+                <time datetime="2016-1-1">#{waktu}#</time>
+            </div>
+
+        </div>
     </div>
-</div>
 ```
+
+Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv)

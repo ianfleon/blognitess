@@ -1,8 +1,13 @@
 {
     "postingan" : [
         {
-            "judul" : "My Profile",
             "url" : "ianfleon"
+        },
+        {
+            "url" : "hai"
+        },
+        {
+            "url" : "contoh"
         }
     ]
 }

@@ -1,47 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title --data-web>#{nama_web}#</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="nav-brand">
-        <h2>
-            <a href="#{base_url}#" data-web>#{nama_web}#</a>
-        </h2>
-    </div>
-    <ul class="nav-link-wrap">
-        <li class="nav-link"><a href="#{base_url}#" data-web>Beranda</a></li>
-        <li class="nav-link"><a href="tentang.html">Tentang</a></li>
-    </ul>
-</nav>
-<!-- End Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar p-3" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#{base_url}#" --data-web>
+                <h1 class="title is-4">
+                    <i class="fas fa-peace"> </i> BLOGNITESS</h1>
+            </a>
 
-<!-- Kontener -->
-<div class="kontener">
-    <!-- Card Wrapper -->
-    <div class="card-wrap" data-blog="wrap-post">
-        <!-- Card Item -->
-        <div class="card-item" data-blog="item-post">
-            <div class="card-info">
-                <h4 class="card-title" data-blog>#{judul}#</h4>
-                <p class="card-desc">Deksripsi</p>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item">
+                    <i class="fas fa-book mr-1"></i>Dokumentasi
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-bug mr-1"></i>Lapor Bug
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-coffee mr-1"></i>Traktir Kopi
+                </a>
+
             </div>
+
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Kontener -->
+    <div class="container mt-5">
+        <div class="columns is-multiline">
+            <div class="column is-four-fifth" --daftar-post>
+                <div class="card" --data-post>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <a href="post.html?/#{url}#" class="title is-4">#{judul}#</a>
+                                <p class="subtitle is-6">#{penulis}#</p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            #{deskripsi}#
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">#{waktu}#</time>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
-<!-- End Kontner -->
+    <!-- End Kontener -->
 
-
-<script src="maincore/blognitess.js"></script>
-<script src="maincore/app.js"></script>
-<script src="maincore/main.js"></script>
+    <script src="maincore/blognitess.js"></script>
+    <!-- <script src="maincore/app.js"></script> -->
+    <script src="maincore/main.js"></script>
+    <!-- <script src="maincore/post.js"></script> -->
 
 </body>
 </html>
