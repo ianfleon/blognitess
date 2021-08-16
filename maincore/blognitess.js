@@ -272,14 +272,18 @@ function _GET_FILE_MD(urls) {
 
         console.log('postingan/' + my.url + '.md');
 
-        if (KODE_CEK == 404) {
-            console.error("File tidak ada dengan URL di list");
-            _CEK_FILE_POSTINGAN(null);
-        } else if (KODE_CEK == 200) {
-            fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
+        // if (KODE_CEK == 404) {
+        //     console.error("File tidak ada dengan URL di list");
+        //     _CEK_FILE_POSTINGAN(null);
+        // } else if (KODE_CEK == 200) {
+        //     fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
+        //         _GET_META_MD(data, my.url);
+        //     });
+        // }
+
+        fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
                 _GET_META_MD(data, my.url);
             });
-        }
 
     });
 }
