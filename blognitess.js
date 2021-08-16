@@ -183,6 +183,7 @@ function _GET_POSTINGAN() {
         let fmd = fileurl[fileurl.length - 1];
 
         if (_CHECK_FILE_EXISTS('postingan/' + fmd + '.md') == 200) {
+            console.log("Ada FILE Postingan");
             _LOAD_FILE('postingan/' + fmd + '.md', _SHOW_POST, 'text');
         } else {
             window.location.replace('404.html');
@@ -233,7 +234,7 @@ let $hasilfile = [];
 
 function _CHECK_FILE_PAGES(data) {
     
-    console.log("Fungsi: _CHECK_FILE_PAGES");   
+    // console.log("Fungsi: _CHECK_FILE_PAGES");   
 
     data.totalpage = data.page.length; // set totalpage
 
@@ -274,14 +275,14 @@ function _SET_LIST_POST(data) {
 // Testing --
 function _GET_FILE_MD(urls) {
 
-    _CEK_FILE_POSTINGAN(urls.length); // kirim total file postingan
+    // _CEK_FILE_POSTINGAN(urls.length); // kirim total file postingan
 
     urls.forEach((my)=> {
 
         console.log(my);
 
         fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
-                console.log("-- Testing 5 --");
+                console.log("-- Testing 6 --");
                 console.log(data);
                 // _GET_META_MD(data, my.url);
             });
