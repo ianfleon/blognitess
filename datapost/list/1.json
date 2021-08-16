@@ -1,13 +1,6 @@
 {
     "postingan" : [
-        {
-            "url" : "ianfleon"
-        },
-        {
-            "url" : "hai"
-        },
-        {
-            "url" : "contoh"
-        }
+        {"url" : "ianfleon"},
+        {"url" : "hai"}
     ]
 }

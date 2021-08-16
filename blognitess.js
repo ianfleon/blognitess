@@ -171,6 +171,8 @@ function _GET_FILE_POST_HTML(config) {
 /* Load File */
 function _GET_POSTINGAN() {
 
+    console.log("Fungsi: _GET_POSTINGAN()");
+
     /* Mengambil URL */
     let fileurl = window.location.href;
     fileurl = fileurl.split('?/');
@@ -240,6 +242,7 @@ function _CHECK_FILE_PAGES(data) {
     console.log(f);
 
     if (_CHECK_FILE_EXISTS(f) == 200) {
+        console.log(f + " Ada!!!");
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
     } else {
         window.location.replace('404.html');
