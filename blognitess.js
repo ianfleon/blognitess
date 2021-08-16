@@ -365,8 +365,6 @@ function _RUN_PAGE(page) {
     _LOAD_FILE('datapost/page.json', _CHECK_FILE_PAGES);
 }
 
-console.log("BLOGNITESS: Testing 3");
-
 /* Fungsi Pertama */
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
 window.onload = _RUN_PAGE();

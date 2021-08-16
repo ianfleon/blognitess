@@ -75,7 +75,13 @@
     </div>
     <!-- End Kontener -->
 
-    <script src="blognitess.js"></script>
+    <script>
+        fetch('postingan/ianfleon.md').then(data => data.text()).then(function(data) {
+            console.log(data);
+        });
+    </script>
+
+    <!-- <script src="blognitess.js"></script> -->
     <!-- <script src="maincore/app.js"></script> -->
     <!-- <script src="maincore/main.js"></script> -->
     <!-- <script src="maincore/post.js"></script> -->
