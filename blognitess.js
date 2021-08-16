@@ -233,13 +233,11 @@ let $hasilfile = [];
 
 function _CHECK_FILE_PAGES(data) {
     
-    console.log("Fungsi: _CHECK_FILE_PAGES");
+    console.log("Fungsi: _CHECK_FILE_PAGES");   
 
     data.totalpage = data.page.length; // set totalpage
 
     const f = 'datapost/list/' + data.page[_CHECK_PAGE()-1] + '.json';
-
-    console.log(f);
 
     if (_CHECK_FILE_EXISTS(f) == 200) {
         console.log(f + " Ada!!!");
@@ -283,9 +281,9 @@ function _GET_FILE_MD(urls) {
         console.log(my);
 
         fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
-                console.log("## Testing 4");
+                console.log("-- Testing 5 --");
                 console.log(data);
-                _GET_META_MD(data, my.url);
+                // _GET_META_MD(data, my.url);
             });
 
     });
@@ -328,13 +326,14 @@ function _GET_META_MD(data, myurl) {
 
 function _CEK_FILE_POSTINGAN(totalfile) {
 
+    console.log("fungsi: _CEK_FILE_POSTINGAN");
+
     const CHECK_FILES = setInterval(() => {
         if (totalfile === $hasilfile.length) {
             clearInterval(CHECK_FILES);
             _SET_LIST_POST($hasilfile);
         } else if(totalfile === null) {
             clearInterval(CHECK_FILES);
-            // document.body.innerHTML = "Tolong cek datapost/list";
         }
 
     }, 100);
