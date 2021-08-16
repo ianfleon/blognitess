@@ -272,7 +272,7 @@ function _GET_FILE_MD(urls) {
 
         const KODE_CEK = _CHECK_FILE_EXISTS('postingan/' + my.url + '.md');
 
-        console.log('postingan/' + my.url + '.md');
+        // console.log('postingan/' + my.url + '.md');
 
         if (KODE_CEK == 404) {
             console.error("File tidak ada dengan URL di list");
@@ -365,4 +365,4 @@ console.log("BLOGNITESS: Testing 2");
 /* Fungsi Pertama */
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
 window.onload = _RUN_PAGE();
-_CHECK_FILE_POST_HTML();
+// _CHECK_FILE_POST_HTML();
