@@ -230,8 +230,15 @@ let $totalfile = 0;
 let $hasilfile = [];
 
 function _CHECK_FILE_PAGES(data) {
+    
+    console.log("Fungsi: _CHECK_FILE_PAGES");
+
     data.totalpage = data.page.length; // set totalpage
+
     const f = 'datapost/list/' + data.page[_CHECK_PAGE()-1] + '.json';
+
+    console.log(f);
+
     if (_CHECK_FILE_EXISTS(f) == 200) {
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
     } else {
