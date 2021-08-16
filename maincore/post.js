@@ -5,12 +5,27 @@ function _SHOW_POST(data) {
     });
 }
 
+window.onload = _CHECK_POST_HTML_FILE;
+
+function _CHECK_POST_HTML_FILE() {
+    _LOAD_FILE('konfigurasi.json', _GET_POSTINGAN);
+}
+
 /* Load File */
-window.onload = function() {
+function _GET_POSTINGAN(phf) {
 
     /* Mengambil URL */
     let fileurl = window.location.href;
     fileurl = fileurl.split('?/');
+
+    let file_sekarang = fileurl[0].split('/');
+    file_sekarang = file_sekarang[file_sekarang.length-1];
+
+    if (phf.post_html_file == 'index.html' || phf.post_html_file != file_sekarang) {
+        // _ERROR_MEN("Hahaha");      
+    } else {
+        console.log("Nice");
+    }
 
     /* Jika add URL untuk get file */
     if (fileurl.length > 1) {
@@ -26,7 +41,6 @@ window.onload = function() {
     } else {
         window.location.replace('index.html')
     }
-
 }
 
 /* Mengambil Detail Meta Post */

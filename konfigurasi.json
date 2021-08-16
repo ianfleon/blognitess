@@ -1,5 +1,5 @@
 {
     "nama_web" : "Blognitess",
     "base_url" : "https://ianfleon.github.io/blognitess/",
-    "post_html_file" : "post.html"
+    "base_url_local" : "http://127.0.0.1:5500/"
 }
