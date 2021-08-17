@@ -80,7 +80,7 @@ Taruh attribute ```--data-web``` di element, dan beri nilai pada penanda sesuai 
 
 Contoh: ```<title --data-web>#{nama_web}#</title>```
 
-## Menambil Dafar Postingan
+## Mengambil Dafar Postingan
 Beri attribute ```--daftar-post``` pada element yang ingin dilooping sebagai item.
 
 **Contoh Kode:**
