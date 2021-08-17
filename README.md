@@ -8,6 +8,11 @@ Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "
 
 Contoh: ```#{base_url}#``` (tidak boleh ada space/spasi)
 
+## Mengambil Data Konfigurasi Web
+Taruh attribute ```--data-web``` di element, dan beri nilai pada penanda sesuai dengan yang ada pada file ```konfigurasi.json```
+
+Contoh: ```<title --data-web>#{nama_web}#</title>```
+
 ## Menambil Dafar Postingan
 Beri attribute ```--daftar-post``` pada element yang ingin dilooping sebagai item.
 
