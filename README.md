@@ -89,9 +89,9 @@ Kemudian buat sebuah wrapper (pembungkus) dari post. Nantinya diberi penanda ses
 
 **Contoh Kode:**
 ```html
-<div class="card" --data-post>
-    <a href="post.html?/#{url}#" class="title is-4">#{judul}#</a>
-    <div class="content">
+<div class="pembungkus" --data-post>
+    <a href="post.html?/#{url}#">#{judul}#</a>
+    <div class="konten">
         #{deskripsi}#
         <br>
         <time>#{waktu}#</time>
@@ -117,8 +117,8 @@ Nilai Penanda Pada Postingan:
 
 **Contoh Kode:**
 ```html
-<div class="content" --data-post>
-    <h2 class="title">#{judul}#</h2>
+<div class="konten" --data-post>
+    <h2>#{judul}#</h2>
     <p>#{waktu}#</p>
     #{isi}#
 </div>
@@ -134,9 +134,9 @@ Untuk mengambil data (angka) page/halaman, beri attribute ```--data-page```.
 
 **Contoh Kode:**
 ```html
-<nav class="pagination mt-5" role="navigation" aria-label="pagination" --data-page>
-    <a class="pagination-previous" href="index.html?=#{sebelum}#">Sebelum</a>
-    <a class="pagination-next" href="index.html?=#{setelah}#">Next page</a>
+<nav class="pagination" --data-page>
+    <a href="index.html?=#{sebelum}#">Sebelum</a>
+    <a href="index.html?=#{setelah}#">Setelah</a>
 </nav>
 ```
 
