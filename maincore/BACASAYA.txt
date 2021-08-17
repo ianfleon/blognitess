@@ -1,0 +1,4 @@
+Ini adalah file utama untuk menjalankan fungsi-fungsi.
+Terima Kasih.
+
+Indonesia, 17 Agustus 2021.

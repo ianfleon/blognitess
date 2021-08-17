@@ -1,8 +1,8 @@
----
-judul : "Tulis Judul Postingan Disini (Penulisan Markdown)"
-deskripsi : "Deskripsi Singkat Mengenai Postingan (Standar Penulisan Markdown)"
-waktu : "Waktu Postingan Ini Dibuat / Diupload (16 Agustus 2021)"
----
++--
+judul : "HUT REPUBLIK INDONESIA"
+deskripsi : "Hari Kemerdekaan Indonesia"
+waktu : "17 Agustus 2021"
++--
   
 # Heading 1
 ## Heading 2
@@ -11,7 +11,7 @@ waktu : "Waktu Postingan Ini Dibuat / Diupload (16 Agustus 2021)"
 ##### Heading 5
 ###### Heading 6
   
-hi how are ya? just adding a bit of [multiline text](https://google.com?q=multiline%20text "Google homepage") with a title for the link. And a [link](https://google.com) without to see how it works out in the parser ya know.
+Hai, apa kabar? Semoga selalu dalam kesehatan yang baik. [multiline text](https://google.com?q=multiline%20text "Google homepage") with a title for the link. And a [link](https://google.com) without to see how it works out in the parser ya know.
 
   
 > een quite for your pleasure just one question, is it multiline? Yes it sure is sir

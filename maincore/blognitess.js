@@ -56,7 +56,7 @@ function _RE_OUTER(elemen, nilai) {
     let newElemen = elemen.match(/#{(.*?)}#{1}/g);
 
     if (newElemen === null) {
-        _ERROR_MEN("Waduh, ada yang error nih! Coba cek penulisan tandanya.");
+        _ERROR_MEN("Waduh, ada yang error nih! Coba cek penulisan tandanya.", elemen);
     }
 
     newElemen.forEach(n => {
@@ -157,21 +157,33 @@ function _CHECK_FILE_POST_HTML() {
 
 function _GET_FILE_POST_HTML(config) {
 
+    if (config.file_post_html === undefined || config.file_post_html === '') {
+        config.file_post_html = 'post.html';
+    }
+
     let file_sekarang = window.location.href.split()[0].split('/');
     file_sekarang = file_sekarang[file_sekarang.length - 1];
 
-    // console.log(file_sekarang);
-
-    if (file_sekarang == config.file_post_html || file_sekarang != 'index.html') {
+    if (file_sekarang === config.file_post_html || file_sekarang != 'index.html') {
         _GET_POSTINGAN();
+    }
+
+    // Handling URL pada post
+    const CURRENTURL = window.location.href.split('/');
+    if (CURRENTURL[CURRENTURL.length - 1].includes('post.html')) {
+        if (CURRENTURL[CURRENTURL.length - 1].includes(config.file_post_html + '?/') == false) {
+            __REDIRECT('index.html');
+        }
     }
 
 }
 
+function __REDIRECT(url) {
+    window.location.replace(url);
+}
+
 /* Load File */
 function _GET_POSTINGAN() {
-
-    // console.log("Fungsi: _GET_POSTINGAN()");
 
     /* Mengambil URL */
     let fileurl = window.location.href;
@@ -183,14 +195,11 @@ function _GET_POSTINGAN() {
         let fmd = fileurl[fileurl.length - 1];
 
         if (_CHECK_FILE_EXISTS('postingan/' + fmd + '.md') == 200) {
-            // console.log("Ada FILE Postingan");
             _LOAD_FILE('postingan/' + fmd + '.md', _SHOW_POST, 'text');
         } else {
             window.location.replace('404.html');
         }
 
-    } else {
-        window.location.replace('index.html')
     }
 }
 
@@ -232,19 +241,16 @@ function _REBUILD_POST(data) {
 let $totalfile = 0;
 let $hasilfile = [];
 
-function _CHECK_FILE_PAGES(data) {
-    
-    // console.log("Fungsi: _CHECK_FILE_PAGES");   
+function _CHECK_FILE_PAGES(data) {  
 
     data.totalpage = data.page.length; // set totalpage
 
     const f = 'datapost/list/' + data.page[_CHECK_PAGE()-1] + '.json';
 
     if (_CHECK_FILE_EXISTS(f) == 200) {
-        // console.log(f + " Ada!!!");
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
     } else {
-        window.location.replace('404.html');
+        window.location.replace('index.html');
     }
 }
 
@@ -279,8 +285,6 @@ function _GET_FILE_MD(urls) {
 
     urls.forEach((my)=> {
 
-        // console.log(my);
-
         fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
                 _GET_META_MD(data, my.url);
             });
@@ -296,7 +300,6 @@ function _GET_META_MD(data, myurl) {
 
     if (meta === null) {
         console.error("BLOGNITESS ERROR: Cek URL di datapost/list");
-        document.querySelector('html').innerHTML = '';
         return false;
     }
 
@@ -346,6 +349,7 @@ function _CHECK_PAGE() {
 
     let p;
     if (url.search('index.html') != null) {
+        // console.log("Ada nih!");
         p = url.split('?=');
         if (p.length > 1) {
             if (p[1] != '') {
@@ -357,17 +361,37 @@ function _CHECK_PAGE() {
             return 1;
         }
     }
+
 }
 
 function _RUN_PAGE(page) {
     _LOAD_FILE('datapost/page.json', _CHECK_FILE_PAGES);
 }
 
+function _GET_PAGE(data) {
+
+    const PAGE = {};
+    PAGE.total = data.page.length;
+    PAGE.sekarang = _CHECK_PAGE();
+    PAGE.setelah = parseInt(_CHECK_PAGE()) + 1;
+    PAGE.sebelum = parseInt(_CHECK_PAGE()) - 1;
+
+    if (_CHECK_PAGE() == PAGE.total) {
+        PAGE.setelah = 1;
+    } else if (_CHECK_PAGE() == 1) {
+        PAGE.sebelum = PAGE.total;
+    }
+
+    const Tanda_Page = document.querySelectorAll("[--data-page]");
+
+    Tanda_Page.forEach(t => {
+        t.outerHTML = _RE_OUTER(t.outerHTML, PAGE);
+    });
+
+}
+
 /* Fungsi Pertama */
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
 window.onload = _RUN_PAGE();
 _CHECK_FILE_POST_HTML();
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("OK! DOM DONE!");
-});
+_LOAD_FILE('datapost/page.json', _GET_PAGE);
