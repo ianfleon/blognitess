@@ -2,6 +2,5 @@
     "nama_web" : "Blognitess",
     "base_url" : "https://ianfleon.github.io/blognitess/",
     "base_url_local" : "http://127.0.0.1:5500/",
-    "file_post_html" : "post.html",
-    "file_index_html" : "index.html"
+    "file_post_html" : "post.html"
 }

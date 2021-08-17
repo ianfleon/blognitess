@@ -3,13 +3,20 @@ Blognite Static Site
 
 Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "Markdown" untuk kontennya.
 
+# Menggunakan Blognitess
+Cukup dengan memanggil file utamanya:
+```html
+<script src="maincore/blognitess.js"></script>
+```
+taruh sebelum tag ```</body>```
+
 # Penanda Blognitess
 ```#{}#```
 
 Contoh: ```#{base_url}#``` (tidak boleh ada space/spasi)
 
 # Struktur Folder Utama
-- ```_default``` : berisi sebuah file markdown sebagai template postingan
+- ```_default``` : berisi template/penulisan standar (boleh dihapus)*
 - ```datapost``` : berisi file ```page.json``` dan folder ```list```
 - ```list``` : berisi file yang berisi nama-nama dari file postingan
 - ```maincore``` : berisi file inti sistem
@@ -47,9 +54,11 @@ Buka folder ```datapost/list``` kemudian buat sebuah file JSON. Misal: ```halama
 }
 ```
 
-Jika ingin menambah postingan lain, tambahkan objek baru dengan katakunci/index ```url``` dan diisi dengan nama file (tanpa ekstensi).
+Jika ingin menambah postingan lain, tambahkan objek baru dengan katakunci/index ```url``` dan diisi dengan nama file
+(tanpa ekstensi).
 
-Anggap saja ini adalah satu halaman. Jika ingin membuat halaman lain, silahkan tambahkan file baru dengan nama sesuai selera.
+Anggap saja ini adalah satu halaman. Jika ingin membuat halaman lain, silahkan tambahkan file baru dengan nama sesuai
+selera.
 
 Setelah itu, buka ```page.json``` di folder ```datapost``` kemudian isi nama file yang sudah dibuat.
 ```json
@@ -61,7 +70,8 @@ Setelah itu, buka ```page.json``` di folder ```datapost``` kemudian isi nama fil
 ```
 
 ## Mengambil Data Konfigurasi Web
-Taruh attribute ```--data-web``` di element, dan beri nilai pada penanda sesuai dengan yang ada pada file ```konfigurasi.json```
+Taruh attribute ```--data-web``` di element, dan beri nilai pada penanda sesuai dengan yang ada pada file
+```konfigurasi.json```
 
 Contoh: ```<title --data-web>#{nama_web}#</title>```
 
@@ -70,8 +80,8 @@ Beri attribute ```--daftar-post``` pada element yang ingin dilooping sebagai ite
 
 **Contoh Kode:**
 ```html
-<div class="column is-four-fifth" --daftar-post>
-
+<div class="kontener" --daftar-post>
+    <!-- Diikuti Pembungkus Dari Penanda -->
 </div>
 ```
 
@@ -80,22 +90,16 @@ Kemudian buat sebuah wrapper (pembungkus) dari post. Nantinya diberi penanda ses
 **Contoh Kode:**
 ```html
 <div class="card" --data-post>
-    <div class="card-content">
-        <div class="media">
-            <div class="media-content">
-                <a href="post.html?/#{url}#" class="title is-4">#{judul}#</a>
-                <p class="subtitle is-6">#{penulis}#</p>
-            </div>
-        </div>
-        <div class="content">
-            #{deskripsi}#
-            <a href="#">#css</a> <a href="#">#responsive</a>
-            <br>
-            <time datetime="2016-1-1">#{waktu}#</time>
-        </div>
+    <a href="post.html?/#{url}#" class="title is-4">#{judul}#</a>
+    <div class="content">
+        #{deskripsi}#
+        <br>
+        <time>#{waktu}#</time>
     </div>
 </div>
 ```
+
+> Penanda diatas berdasarkan meta-data pada file postingan (MD).
 
 ## Menampilkan Isi Post
 URL Default: ```post.html?/``` + ```nama-file-postingan```
@@ -105,26 +109,19 @@ Silahkan atur file html di ```konfigurasi.json``` yang akan digunakan untuk mena
 Default: ```file_post_html: post.html``` (jika dikosongkan juga sama).
 Silahkan dimodifikasi seperti ```file_post_html: artikel.html``` dan lain-lain.
 
+Nilai Penanda Pada Postingan:
+- ```judul``` : Judul dari Postingan (Sesuai pada file MD)
+- ```deskripsi``` : Deskripsi dari Postingan (Sesuai pada file MD)
+- ```waktu``` : Waktu postingan dibuat/diupload (Sesuai pada file MD)
+- ```isi``` : Isi dari Postingan (Sesuai pada file MD)
+
 **Contoh Kode:**
 ```html
-<!-- Kontener -->
-<div class="container mt-5">
-    <div class="columns is-multiline">
-        <div class="column is-four-fifth">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content" --data-post>
-                        <h2 class="title is-4">#{judul}#</h2>
-                        <p>#{waktu}#</p>
-                        #{isi}#
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+<div class="content" --data-post>
+    <h2 class="title">#{judul}#</h2>
+    <p>#{waktu}#</p>
+    #{isi}#
 </div>
-<!-- End Kontener -->
 ```
 
 ## Pagination

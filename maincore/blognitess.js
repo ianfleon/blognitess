@@ -250,7 +250,7 @@ function _CHECK_FILE_PAGES(data) {
     if (_CHECK_FILE_EXISTS(f) == 200) {
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
     } else {
-        window.location.replace('index.html');
+        _ERROR_MEN('File "page.json" di folder "datapost" tidak sesuai dengan nama file di folder "datapost/list"', "datapost/list | page.json");
     }
 }
 
@@ -299,7 +299,7 @@ function _GET_META_MD(data, myurl) {
     const meta = data.match(/[\+--\_]{2}([^\\_]+)[\+--\_]{2}/g);
 
     if (meta === null) {
-        console.error("BLOGNITESS ERROR: Cek URL di datapost/list");
+        _ERROR_MEN("Nama file postingan tidak sama dengan yang ada di datapost/list", "datapost/list | postingan");
         return false;
     }
 
@@ -376,11 +376,15 @@ function _GET_PAGE(data) {
     PAGE.setelah = parseInt(_CHECK_PAGE()) + 1;
     PAGE.sebelum = parseInt(_CHECK_PAGE()) - 1;
 
-    if (_CHECK_PAGE() == PAGE.total) {
-        PAGE.setelah = 1;
-    } else if (_CHECK_PAGE() == 1) {
-        PAGE.sebelum = PAGE.total;
+    if (parseInt(_CHECK_PAGE()) == PAGE.total) {
+        PAGE.setelah = PAGE.total;
     }
+    
+    if (parseInt(_CHECK_PAGE()) == 1) {
+        PAGE.sebelum = 1;
+    }
+
+    console.log(PAGE.sebelum);
 
     const Tanda_Page = document.querySelectorAll("[--data-page]");
 
