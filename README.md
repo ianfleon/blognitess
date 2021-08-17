@@ -4,11 +4,16 @@ Blognite Static Site
 Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "Markdown" untuk kontennya.
 
 # Menggunakan Blognitess
+
 Cukup dengan memanggil file utamanya:
 ```html
 <script src="maincore/blognitess.js"></script>
 ```
 taruh sebelum tag ```</body>```
+
+# Menjalankan Blognitess Di Lokal Server
+
+Bisa dengan menggunakan ```Live Server``` pada ekstensi VSCode atau Brackets.
 
 # Penanda Blognitess
 ```#{}#```
