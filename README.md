@@ -150,5 +150,8 @@ Parsing Markdown belum mendukung penulisan tag:
 - List
 - Pre/Code
 
+# Catatan
+Silahkan gunakan, kontribusi, cakar bongkar, dan lain-lain. Lakukanlah dengan senang hati.
+
 # Thanks
 Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv)
