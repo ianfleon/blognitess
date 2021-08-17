@@ -1,9 +1,9 @@
----
++--
 judul : "Ini tentang saya!"
 deskripsi : "Woi"
 waktu : "16 Agustus 2021"
 penulis : "ianfleon"
----
++--
 
 Selamat sore, jangan lupa ngopi ya! Hari ini sangat bahagia karena besok adalah "Hari Kemerdekaan Kita!
 Okeh cukup.

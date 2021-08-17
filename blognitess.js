@@ -160,7 +160,7 @@ function _GET_FILE_POST_HTML(config) {
     let file_sekarang = window.location.href.split()[0].split('/');
     file_sekarang = file_sekarang[file_sekarang.length - 1];
 
-    console.log(file_sekarang);
+    // console.log(file_sekarang);
 
     if (file_sekarang == config.file_post_html || file_sekarang != 'index.html') {
         _GET_POSTINGAN();
@@ -171,7 +171,7 @@ function _GET_FILE_POST_HTML(config) {
 /* Load File */
 function _GET_POSTINGAN() {
 
-    console.log("Fungsi: _GET_POSTINGAN()");
+    // console.log("Fungsi: _GET_POSTINGAN()");
 
     /* Mengambil URL */
     let fileurl = window.location.href;
@@ -183,7 +183,7 @@ function _GET_POSTINGAN() {
         let fmd = fileurl[fileurl.length - 1];
 
         if (_CHECK_FILE_EXISTS('postingan/' + fmd + '.md') == 200) {
-            console.log("Ada FILE Postingan");
+            // console.log("Ada FILE Postingan");
             _LOAD_FILE('postingan/' + fmd + '.md', _SHOW_POST, 'text');
         } else {
             window.location.replace('404.html');
@@ -198,7 +198,7 @@ function _GET_POSTINGAN() {
 function _REBUILD_POST(data) {
 
     // meta data dari post
-    const meta = data.match(/[\---\_]{2}([^\\_]+)[\---\_]{2}/g);
+    const meta = data.match(/[\+--\_]{2}([^\\_]+)[\+--\_]{2}/g);
     const info = meta[0].match(/[^\r\n]+/g);
     info.pop();
     info.shift();
@@ -241,7 +241,7 @@ function _CHECK_FILE_PAGES(data) {
     const f = 'datapost/list/' + data.page[_CHECK_PAGE()-1] + '.json';
 
     if (_CHECK_FILE_EXISTS(f) == 200) {
-        console.log(f + " Ada!!!");
+        // console.log(f + " Ada!!!");
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
     } else {
         window.location.replace('404.html');
@@ -275,16 +275,14 @@ function _SET_LIST_POST(data) {
 // Testing --
 function _GET_FILE_MD(urls) {
 
-    // _CEK_FILE_POSTINGAN(urls.length); // kirim total file postingan
+    _CEK_FILE_POSTINGAN(urls.length); // kirim total file postingan
 
     urls.forEach((my)=> {
 
-        console.log(my);
+        // console.log(my);
 
         fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
-                console.log("-- Testing 6 --");
-                console.log(data);
-                // _GET_META_MD(data, my.url);
+                _GET_META_MD(data, my.url);
             });
 
     });
@@ -294,7 +292,7 @@ function _GET_FILE_MD(urls) {
 function _GET_META_MD(data, myurl) {
 
     // meta data dari post
-    const meta = data.match(/[\---\_]{2}([^\\_]+)[\---\_]{2}/g);
+    const meta = data.match(/[\+--\_]{2}([^\\_]+)[\+--\_]{2}/g);
 
     if (meta === null) {
         console.error("BLOGNITESS ERROR: Cek URL di datapost/list");
@@ -327,7 +325,7 @@ function _GET_META_MD(data, myurl) {
 
 function _CEK_FILE_POSTINGAN(totalfile) {
 
-    console.log("fungsi: _CEK_FILE_POSTINGAN");
+    // console.log("fungsi: _CEK_FILE_POSTINGAN");
 
     const CHECK_FILES = setInterval(() => {
         if (totalfile === $hasilfile.length) {
@@ -368,4 +366,4 @@ function _RUN_PAGE(page) {
 /* Fungsi Pertama */
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
 window.onload = _RUN_PAGE();
-// _CHECK_FILE_POST_HTML();
+_CHECK_FILE_POST_HTML();

@@ -1,8 +1,8 @@
----
++--
 judul : "Tulis Judul Postingan Disini (Penulisan Markdown)"
 deskripsi : "Deskripsi Singkat Mengenai Postingan (Standar Penulisan Markdown)"
 waktu : "Waktu Postingan Ini Dibuat / Diupload (16 Agustus 2021)"
----
++--
   
 # Heading 1
 ## Heading 2
