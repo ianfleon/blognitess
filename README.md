@@ -1,5 +1,5 @@
 # Blognitess
-Blognite Static Site (Versi 1.7821)
+Blognite Static Site (Versi 1.7845)
 
 Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "Markdown" untuk kontennya.
 
