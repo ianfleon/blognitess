@@ -95,12 +95,26 @@ Kemudian buat sebuah wrapper (pembungkus) dari post. Nantinya diberi penanda ses
 
 **Contoh Kode:**
 ```html
-<div class="pembungkus" --data-post>
+<div class="pembungkus-post" --data-post>
     <a href="post.html?/#{url}#">#{judul}#</a>
     <div class="konten">
         #{deskripsi}#
         <br>
         <time>#{waktu}#</time>
+    </div>
+</div>
+```
+
+Jadinya :
+```html
+<div class="kontener" --daftar-post>
+    <div class="pembungkus-post" --data-post>
+        <a href="post.html?/#{url}#">#{judul}#</a>
+        <div class="konten">
+            #{deskripsi}#
+            <br>
+            <time>#{waktu}#</time>
+        </div>
     </div>
 </div>
 ```
