@@ -367,3 +367,7 @@ function _RUN_PAGE(page) {
 _LOAD_FILE('konfigurasi.json', _LOAD_CONFIG);
 window.onload = _RUN_PAGE();
 _CHECK_FILE_POST_HTML();
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("OK! DOM DONE!");
+});
