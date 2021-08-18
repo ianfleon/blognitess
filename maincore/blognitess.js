@@ -384,8 +384,6 @@ function _GET_PAGE(data) {
         PAGE.sebelum = 1;
     }
 
-    console.log(PAGE.sebelum);
-
     const Tanda_Page = document.querySelectorAll("[--data-page]");
 
     Tanda_Page.forEach(t => {
