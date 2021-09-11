@@ -6,7 +6,11 @@ Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "
 # Menggunakan Blognitess
 Cukup dengan memanggil file utamanya:
 ```html
+<!-- Versi Asli -->
 <script src="maincore/blognitess.js"></script>
+
+<!-- Versi Minify -->
+<script src="maincore/blognitess.min.js"></script>
 ```
 taruh sebelum tag ```</body>```
 
