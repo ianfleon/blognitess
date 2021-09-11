@@ -46,6 +46,7 @@ function _LOAD_FILE(file, fungsi, respon = 'json', item = null) {
                 }
             });
     }
+
 }
 
 /* Manipulasi Element secara keseluruhan (dipilih) */
@@ -86,6 +87,8 @@ function _PARSE_MARKDOWN(md) {
     //   md = md.replace(/^\s*\n\*/gm, '<ul>\n*');
     //   md = md.replace(/^(\*.+)\s*\n([^\*])/gm, '$1\n</ul>\n\n$2');
     //   md = md.replace(/^\*(.+)/gm, '<li>$1</li>');
+
+    md = md.replace(/\n\s*(\*|\-)\s*([^\n]*)/g, '\n<ul><li>$2</li></ul>');
 
     //ol
     md = md.replace(/^\s*\n\d\./gm, '<ol>\n1.');
@@ -241,11 +244,11 @@ function _REBUILD_POST(data) {
 let $totalfile = 0;
 let $hasilfile = [];
 
-function _CHECK_FILE_PAGES(data) {  
+function _CHECK_FILE_PAGES(data) {
 
     data.totalpage = data.page.length; // set totalpage
 
-    const f = 'datapost/list/' + data.page[_CHECK_PAGE()-1] + '.json';
+    const f = 'datapost/list/' + data.page[_CHECK_PAGE() - 1] + '.json';
 
     if (_CHECK_FILE_EXISTS(f) == 200) {
         _LOAD_FILE(f, _GET_FILE_MD, 'json', 'postingan');
@@ -262,16 +265,16 @@ function _SET_LIST_POST(data) {
     if (Item_Post == null) {
         return false;
     }
-    
+
     for (let i = 0; i < data.length - 1; i++) {
         Item_Post.parentElement.appendChild(Item_Post.cloneNode(true));
     }
 
     const All_Item_Post = document.querySelectorAll('[--daftar-post]');
 
-    All_Item_Post.forEach(function(aip, index) {
+    All_Item_Post.forEach(function (aip, index) {
         const Pendanda_Ku = aip.querySelectorAll('[--data-post]');
-        Pendanda_Ku.forEach(function(pk) {
+        Pendanda_Ku.forEach(function (pk) {
             pk.outerHTML = _RE_OUTER(pk.outerHTML, data[index]);
         });
     });
@@ -283,11 +286,11 @@ function _GET_FILE_MD(urls) {
 
     _CEK_FILE_POSTINGAN(urls.length); // kirim total file postingan
 
-    urls.forEach((my)=> {
+    urls.forEach((my) => {
 
-        fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function(data) {
-                _GET_META_MD(data, my.url);
-            });
+        fetch('postingan/' + my.url + '.md').then(hasil => hasil.text()).then(function (data) {
+            _GET_META_MD(data, my.url);
+        });
 
     });
 }
@@ -309,16 +312,16 @@ function _GET_META_MD(data, myurl) {
 
     let dm = {};
 
-    info.forEach(function(i) {
+    info.forEach(function (i) {
 
         let d = i.split(' : ');
 
         if (d[1] == undefined) {
             console.log("Perhatikan penulisan meta pada file markdown.");
         }
-        
+
         dm[d[0]] = d[1].trim().replaceAll('"', '');
-        
+
     });
 
     dm.url = myurl; // kumpulan url
@@ -334,7 +337,7 @@ function _CEK_FILE_POSTINGAN(totalfile) {
         if (totalfile === $hasilfile.length) {
             clearInterval(CHECK_FILES);
             _SET_LIST_POST($hasilfile);
-        } else if(totalfile === null) {
+        } else if (totalfile === null) {
             clearInterval(CHECK_FILES);
         }
 
@@ -379,7 +382,7 @@ function _GET_PAGE(data) {
     if (parseInt(_CHECK_PAGE()) == PAGE.total) {
         PAGE.setelah = PAGE.total;
     }
-    
+
     if (parseInt(_CHECK_PAGE()) == 1) {
         PAGE.sebelum = 1;
     }
