@@ -162,8 +162,9 @@ Untuk mengambil data (angka) page/halaman, beri attribute ```--data-page```.
 
 # Isu Terkini
 Parsing Markdown belum mendukung penulisan tag:
-- List
 - Pre/Code
+
+Bug: List HTML
 
 # Catatan
 Silahkan gunakan, kontribusi, cakar bongkar, dan lain-lain. Lakukanlah dengan senang hati.
