@@ -164,15 +164,9 @@ Untuk mengambil data (angka) page/halaman, beri attribute ```--data-page```.
 </nav>
 ```
 
-# Isu Terkini
-Parsing Markdown belum mendukung penulisan tag:
-- Pre/Code
-
-Bug: List HTML
-
 # Catatan
 Silahkan gunakan, kontribusi, cakar bongkar, dan lain-lain. Lakukanlah dengan senang hati.
 
-# Thanks
-Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv) (Versi Lana)
-Markdown-it : [https://github.com/markdown-it/markdown-it](https://github.com/markdown-it/markdown-it) (Versi Baru)
+# Thanks to
+- Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv) (Versi Lana)
+- Markdown-it : [https://github.com/markdown-it/markdown-it](https://github.com/markdown-it/markdown-it) (Versi Baru)
