@@ -10,15 +10,13 @@ waktu : "17 Agustus 2021"
 #### Merdeka!
 ##### Merdeka!
 ###### Merdeka!
-  
+
 Hai, apa kabar? Semoga selalu dalam kesehatan yang baik. [Blognitess](https://github.com/ianfleon/blognitess "Blognitess") adalah sebuah framework sederhana untuk menjalankan "Static Site".
 
 Silahkan [Cek Dokumentasi](https://github.com/ianfleon/blognitess).
 
-  
 > Penulisan konten menggunakan "Markdown"
-  
-  
+
 Senang sekali saya bisa menyelesaikannya. *Walau lama dan banyak error, hehehe..* Tapi saya bersemangat untuk menyelesaikannya tepat waktu (_biar bisa pamer_).
   
 Pada hari ini "17 Agustus 2021" tepatnya **Hari Kemerdekaan Indonesia**, ini adalah hadiah dari saya. Walaupun tidak bagus dan tidak bernilai apa-apa, namun saya tetap bersemangat untuk memberikannya.
@@ -26,3 +24,22 @@ Pada hari ini "17 Agustus 2021" tepatnya **Hari Kemerdekaan Indonesia**, ini ada
 ![Gambar Ianfleon](https://raw.githubusercontent.com/ianfleon/ianfleon.github.io/main/bendera.png)
   
 Sekali Merdeka, **Tetap Merdeka!**
+
+## New Update! [21 Oktober 2021]
+
+Bug Fixed:
+- List
+- Pre/Code
+
+Add Lib:
+- Markdown-it
+
+## Contoh
+
+- Unordered List
+- List 1
+- List 2
+
+```js
+Hai, tulis kode anda disini..
+```
