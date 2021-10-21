@@ -6,7 +6,7 @@ Sebuah kerangka sederhana untuk membuat "Web Statis". Kerangka ini menggunakan "
 # Menggunakan Blognitess
 Cukup dengan memanggil file utamanya:
 ```html
-<!-- Versi Asli -->
+<!-- Versi Asli (Develop)  -->
 <script src="maincore/blognitess.js"></script>
 
 <!-- Versi Minify -->
@@ -174,4 +174,5 @@ Bug: List HTML
 Silahkan gunakan, kontribusi, cakar bongkar, dan lain-lain. Lakukanlah dengan senang hati.
 
 # Thanks
-Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv)
+Markdown Parser Default By : [https://codepen.io/kvendrik/pen/Gmefv](https://codepen.io/kvendrik/pen/Gmefv) (Versi Lana)
+Markdown-it : [https://github.com/markdown-it/markdown-it](https://github.com/markdown-it/markdown-it) (Versi Baru)
